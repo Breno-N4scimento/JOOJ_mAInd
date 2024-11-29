@@ -42,7 +42,14 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install HtmlTestRunner
 
-      - name: Run unit tests
+      - name: Run unit tests and generate HTML report
         run: |
-          python -m unittest discover -s . -p "ProjetoTeste.py"
+          python -m unittest discover -s . -p "ProjetoTeste.py" -v --html-report ./test-reports
+
+      - name: Upload HTML test report
+        uses: actions/upload-artifact@v3
+        with:
+          name: html-test-report
+          path: test-reports
