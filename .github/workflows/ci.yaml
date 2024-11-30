@@ -24,18 +24,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Create build artifact
-        run: |
-          mkdir build
-          cp -r * build/  # Copia todos os arquivos do repositório para a pasta build
-          zip -r build.zip build/  # Cria o arquivo zip
-
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: build-artifact
-          path: build.zip
-
   test:
     name: Running unit-tests
     runs-on: ubuntu-latest
@@ -54,14 +42,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install unittest-xml-reporting  # Instala a biblioteca para geração de relatórios
 
-      - name: Run unit tests and generate report
+      - name: Run unit tests
         run: |
-          python -m xmlrunner discover -s tests -p "test_*.py" -o test-reports  # Ajuste o diretório e padrão de nome dos testes
-
-      - name: Upload test report
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-report
-          path: test-reports
+          python -m unittest discover -s . -p "ProjetoTeste.py"
