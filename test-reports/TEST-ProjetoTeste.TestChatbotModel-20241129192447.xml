@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ProjetoTeste.TestChatbotModel-20241129192447" tests="5" file="ProjetoTeste.py" time="0.602" timestamp="2024-11-29T19:24:48" failures="0" errors="0" skipped="0">
-	<testcase classname="ProjetoTeste.TestChatbotModel" name="testAusenciaDataset" time="0.005" timestamp="2024-11-29T19:24:47" file="ProjetoTeste.py" line="34"/>
-	<testcase classname="ProjetoTeste.TestChatbotModel" name="testCarregamentoDataset" time="0.094" timestamp="2024-11-29T19:24:47" file="ProjetoTeste.py" line="27"/>
-	<testcase classname="ProjetoTeste.TestChatbotModel" name="testConversaoVar" time="0.236" timestamp="2024-11-29T19:24:48" file="ProjetoTeste.py" line="39"/>
-	<testcase classname="ProjetoTeste.TestChatbotModel" name="testDivDados" time="0.266" timestamp="2024-11-29T19:24:48" file="ProjetoTeste.py" line="48"/>
-	<testcase classname="ProjetoTeste.TestChatbotModel" name="testInicializacaoKnn" time="0.001" timestamp="2024-11-29T19:24:48" file="ProjetoTeste.py" line="56"/>
-</testsuite>
