@@ -24,6 +24,18 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Run build (exemplo de comando de build)
+        run: |
+          # Se houver algum comando específico para compilar ou gerar artefatos
+          echo "Build completed"
+
+      # Passo para armazenar artefatos (exemplo com logs ou arquivos gerados)
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: ./build/*   # Ajuste o caminho para os arquivos ou diretórios que você deseja armazenar
+
   test:
     name: Running unit-tests
     runs-on: ubuntu-latest
@@ -46,3 +58,11 @@ jobs:
       - name: Run unit tests
         run: |
           python -m unittest discover -s . -p "ProjetoTeste.py"
+
+      # Passo para armazenar artefatos dos testes, como logs ou relatórios
+      - name: Upload test results
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: ./test-reports/*   # Ajuste o caminho para os arquivos ou diretórios de testes (ex: relatórios de testes)
+
